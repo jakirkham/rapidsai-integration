@@ -12,5 +12,3 @@ numpy_version:
   - '>=1.23,<3.0'
 nvtx_version:
   - '>=0.2.1,<0.3'
-ucx_version:
-  - '>=1.15.0,<1.21.0'
