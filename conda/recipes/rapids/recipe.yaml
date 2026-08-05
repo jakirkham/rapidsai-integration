@@ -8,6 +8,7 @@ context:
   cuda_major: '${{ (env.get("RAPIDS_CUDA_VERSION") | split("."))[0] }}'
   date_string: '${{ env.get("RAPIDS_DATE_STRING") }}'
   head_rev: ${{ git.head_rev(".")[:8] }}
+  ucxx_version: '${{ env.get("UCXX_PACKAGE_VERSION") }}'
 
 package:
   name: rapids
@@ -46,6 +47,7 @@ requirements:
     - rmm ${{ minor_version }}.*
     - pylibcugraph ${{ minor_version }}.*
     - libcugraph_etl ${{ minor_version }}.*
+    - ucxx ${{ ucxx_version }}.*
   ignore_run_exports:
     by_name:
       - python_abi

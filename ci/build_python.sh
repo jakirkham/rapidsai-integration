@@ -10,6 +10,9 @@ source rapids-date-string
 RAPIDS_PACKAGE_VERSION=$(rapids-generate-version)
 export RAPIDS_PACKAGE_VERSION
 
+UCXX_PACKAGE_VERSION="$(sed -E -e 's/^([0-9]+\.[0-9]+)\.[0-9]+$/\1.*/' UCXX_VERSION)"
+export UCXX_PACKAGE_VERSION
+
 source rapids-rattler-channel-string
 
 CONDA_CONFIG_FILE="conda/recipes/versions.yaml"
